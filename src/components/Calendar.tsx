@@ -97,7 +97,7 @@ const months = [
   },
 ]
 
-function classNames(...classes) {
+function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(' ')
 }
 
@@ -155,7 +155,7 @@ export default function Example() {
                       'mx-auto flex size-7 items-center justify-center rounded-full',
                     )}
                   >
-                    {day.date.split('-').pop().replace(/^0/, '')}
+                    {day.date.split('-').pop()?.replace(/^0/, '')}
                   </time>
                 </button>
               ))}

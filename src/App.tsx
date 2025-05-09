@@ -10,7 +10,7 @@ const App: React.FC = () => {
       <Header />
       <div className="flex">
         <SideMenu />
-        <div className="p-8">
+        <div className="w-full p-8">
           <StringPage />
         </div>
       </div>

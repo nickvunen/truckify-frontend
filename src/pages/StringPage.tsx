@@ -17,11 +17,7 @@ const StringPage: React.FC = () => {
   }, []);
 
   return (
-    <div>
-      <h2>String from Backend</h2>
-      {error ? <p style={{ color: "red" }}>{error}</p> : <p>{result}</p>}
-      <Calendar />
-    </div>
+    <Calendar />
   );
 };
 
