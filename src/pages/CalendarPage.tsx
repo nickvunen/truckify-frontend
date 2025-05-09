@@ -4,13 +4,7 @@ import Calendar from "../components/Calendar";
 import TruckList from "../components/TruckList";
 import { Dayjs } from "dayjs";
 
-type Truck = {
-  level: string;
-  image: string;
-  license: string;
-  price_per_day: number;
-  id: number;
-};
+import { Truck } from "../utils/types";
 
 type TruckAvailabilityResponse = {
   available_trucks: Truck[];

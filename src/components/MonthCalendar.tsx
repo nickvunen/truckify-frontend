@@ -1,20 +1,14 @@
 import React from "react";
 import classNames from "classnames";
 import dayjs, { Dayjs } from "dayjs";
+import { Date } from '../utils/types';
 
 type Props = {
   name: string;
-  days: {
-    date: Dayjs;
-    day: number;
-    full: string;
+  days: (Date & {
     isCurrentMonth: boolean;
-  }[];
-  selectedRange: {
-    date: Dayjs;
-    day: number;
-    full: string;
-  }[];
+  })[];
+  selectedRange: Date[];
   onSelectDate: (date: Dayjs) => void;
 };
 

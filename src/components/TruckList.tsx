@@ -1,10 +1,4 @@
-type Truck = {
-  level: string;
-  image: string;
-  license: string;
-  price_per_day: number;
-  id: number;
-};
+import { Truck } from "../utils/types";
 
 const TruckList: React.FC<{
   title: string;
