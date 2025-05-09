@@ -19,7 +19,12 @@ type Props = {
 };
 
 const TODAY = dayjs().format("DD-MM-YYYY");
-const MonthCalendar: React.FC<Props> = ({ name, days, selectedRange, onSelectDate }) => {
+const MonthCalendar: React.FC<Props> = ({
+  name,
+  days,
+  selectedRange,
+  onSelectDate,
+}) => {
   const selectedDays = selectedRange.map((date) => date.full);
 
   return (

@@ -2,7 +2,7 @@ import React from "react";
 
 import Header from "./components/Header";
 import SideMenu from "./components/SideMenu";
-import StringPage from "./pages/StringPage";
+import CalendarPage from "./pages/CalendarPage";
 
 const App: React.FC = () => {
   return (
@@ -11,7 +11,7 @@ const App: React.FC = () => {
       <div className="flex">
         <SideMenu />
         <div className="w-full p-8">
-          <StringPage />
+          <CalendarPage />
         </div>
       </div>
     </div>
