@@ -1,107 +1,185 @@
-import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/20/solid'
+import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/20/solid";
 
 const months = [
   {
-    name: 'January',
+    name: "January",
     days: [
-      { date: '2021-12-27' },
-      { date: '2021-12-28' },
-      { date: '2021-12-29' },
-      { date: '2021-12-30' },
-      { date: '2021-12-31' },
-      { date: '2022-01-01', isCurrentMonth: true },
-      { date: '2022-01-02', isCurrentMonth: true },
-      { date: '2022-01-03', isCurrentMonth: true },
-      { date: '2022-01-04', isCurrentMonth: true },
-      { date: '2022-01-05', isCurrentMonth: true },
-      { date: '2022-01-06', isCurrentMonth: true },
-      { date: '2022-01-07', isCurrentMonth: true },
-      { date: '2022-01-08', isCurrentMonth: true },
-      { date: '2022-01-09', isCurrentMonth: true },
-      { date: '2022-01-10', isCurrentMonth: true },
-      { date: '2022-01-11', isCurrentMonth: true },
-      { date: '2022-01-12', isCurrentMonth: true, isToday: true },
-      { date: '2022-01-13', isCurrentMonth: true },
-      { date: '2022-01-14', isCurrentMonth: true },
-      { date: '2022-01-15', isCurrentMonth: true },
-      { date: '2022-01-16', isCurrentMonth: true },
-      { date: '2022-01-17', isCurrentMonth: true },
-      { date: '2022-01-18', isCurrentMonth: true },
-      { date: '2022-01-19', isCurrentMonth: true },
-      { date: '2022-01-20', isCurrentMonth: true },
-      { date: '2022-01-21', isCurrentMonth: true },
-      { date: '2022-01-22', isCurrentMonth: true },
-      { date: '2022-01-23', isCurrentMonth: true },
-      { date: '2022-01-24', isCurrentMonth: true },
-      { date: '2022-01-25', isCurrentMonth: true },
-      { date: '2022-01-26', isCurrentMonth: true },
-      { date: '2022-01-27', isCurrentMonth: true },
-      { date: '2022-01-28', isCurrentMonth: true },
-      { date: '2022-01-29', isCurrentMonth: true },
-      { date: '2022-01-30', isCurrentMonth: true },
-      { date: '2022-01-31', isCurrentMonth: true },
-      { date: '2022-02-01' },
-      { date: '2022-02-02' },
-      { date: '2022-02-03' },
-      { date: '2022-02-04' },
-      { date: '2022-02-05' },
-      { date: '2022-02-06' },
+      { date: "2021-12-27" },
+      { date: "2021-12-28" },
+      { date: "2021-12-29" },
+      { date: "2021-12-30" },
+      { date: "2021-12-31" },
+      { date: "2022-01-01", isCurrentMonth: true },
+      { date: "2022-01-02", isCurrentMonth: true },
+      { date: "2022-01-03", isCurrentMonth: true },
+      { date: "2022-01-04", isCurrentMonth: true },
+      { date: "2022-01-05", isCurrentMonth: true },
+      { date: "2022-01-06", isCurrentMonth: true },
+      { date: "2022-01-07", isCurrentMonth: true },
+      { date: "2022-01-08", isCurrentMonth: true },
+      { date: "2022-01-09", isCurrentMonth: true },
+      { date: "2022-01-10", isCurrentMonth: true },
+      { date: "2022-01-11", isCurrentMonth: true },
+      { date: "2022-01-12", isCurrentMonth: true, isToday: true },
+      { date: "2022-01-13", isCurrentMonth: true },
+      { date: "2022-01-14", isCurrentMonth: true },
+      { date: "2022-01-15", isCurrentMonth: true },
+      { date: "2022-01-16", isCurrentMonth: true },
+      { date: "2022-01-17", isCurrentMonth: true },
+      { date: "2022-01-18", isCurrentMonth: true },
+      { date: "2022-01-19", isCurrentMonth: true },
+      { date: "2022-01-20", isCurrentMonth: true },
+      { date: "2022-01-21", isCurrentMonth: true },
+      { date: "2022-01-22", isCurrentMonth: true },
+      { date: "2022-01-23", isCurrentMonth: true },
+      { date: "2022-01-24", isCurrentMonth: true },
+      { date: "2022-01-25", isCurrentMonth: true },
+      { date: "2022-01-26", isCurrentMonth: true },
+      { date: "2022-01-27", isCurrentMonth: true },
+      { date: "2022-01-28", isCurrentMonth: true },
+      { date: "2022-01-29", isCurrentMonth: true },
+      { date: "2022-01-30", isCurrentMonth: true },
+      { date: "2022-01-31", isCurrentMonth: true },
+      { date: "2022-02-01" },
+      { date: "2022-02-02" },
+      { date: "2022-02-03" },
+      { date: "2022-02-04" },
+      { date: "2022-02-05" },
+      { date: "2022-02-06" },
     ],
   },
   {
-    name: 'February',
+    name: "February",
     days: [
-      { date: '2022-01-31' },
-      { date: '2022-02-01', isCurrentMonth: true },
-      { date: '2022-02-02', isCurrentMonth: true },
-      { date: '2022-02-03', isCurrentMonth: true },
-      { date: '2022-02-04', isCurrentMonth: true },
-      { date: '2022-02-05', isCurrentMonth: true },
-      { date: '2022-02-06', isCurrentMonth: true },
-      { date: '2022-02-07', isCurrentMonth: true },
-      { date: '2022-02-08', isCurrentMonth: true },
-      { date: '2022-02-09', isCurrentMonth: true },
-      { date: '2022-02-10', isCurrentMonth: true },
-      { date: '2022-02-11', isCurrentMonth: true },
-      { date: '2022-02-12', isCurrentMonth: true },
-      { date: '2022-02-13', isCurrentMonth: true },
-      { date: '2022-02-14', isCurrentMonth: true },
-      { date: '2022-02-15', isCurrentMonth: true },
-      { date: '2022-02-16', isCurrentMonth: true },
-      { date: '2022-02-17', isCurrentMonth: true },
-      { date: '2022-02-18', isCurrentMonth: true },
-      { date: '2022-02-19', isCurrentMonth: true },
-      { date: '2022-02-20', isCurrentMonth: true },
-      { date: '2022-02-21', isCurrentMonth: true },
-      { date: '2022-02-22', isCurrentMonth: true },
-      { date: '2022-02-23', isCurrentMonth: true },
-      { date: '2022-02-24', isCurrentMonth: true },
-      { date: '2022-02-25', isCurrentMonth: true },
-      { date: '2022-02-26', isCurrentMonth: true },
-      { date: '2022-02-27', isCurrentMonth: true },
-      { date: '2022-02-28', isCurrentMonth: true },
-      { date: '2022-03-01' },
-      { date: '2022-03-02' },
-      { date: '2022-03-03' },
-      { date: '2022-03-04' },
-      { date: '2022-03-05' },
-      { date: '2022-03-06' },
-      { date: '2022-03-07' },
-      { date: '2022-03-08' },
-      { date: '2022-03-09' },
-      { date: '2022-03-10' },
-      { date: '2022-03-11' },
-      { date: '2022-03-12' },
-      { date: '2022-03-13' },
+      { date: "2022-01-31" },
+      { date: "2022-02-01", isCurrentMonth: true },
+      { date: "2022-02-02", isCurrentMonth: true },
+      { date: "2022-02-03", isCurrentMonth: true },
+      { date: "2022-02-04", isCurrentMonth: true },
+      { date: "2022-02-05", isCurrentMonth: true },
+      { date: "2022-02-06", isCurrentMonth: true },
+      { date: "2022-02-07", isCurrentMonth: true },
+      { date: "2022-02-08", isCurrentMonth: true },
+      { date: "2022-02-09", isCurrentMonth: true },
+      { date: "2022-02-10", isCurrentMonth: true },
+      { date: "2022-02-11", isCurrentMonth: true },
+      { date: "2022-02-12", isCurrentMonth: true },
+      { date: "2022-02-13", isCurrentMonth: true },
+      { date: "2022-02-14", isCurrentMonth: true },
+      { date: "2022-02-15", isCurrentMonth: true },
+      { date: "2022-02-16", isCurrentMonth: true },
+      { date: "2022-02-17", isCurrentMonth: true },
+      { date: "2022-02-18", isCurrentMonth: true },
+      { date: "2022-02-19", isCurrentMonth: true },
+      { date: "2022-02-20", isCurrentMonth: true },
+      { date: "2022-02-21", isCurrentMonth: true },
+      { date: "2022-02-22", isCurrentMonth: true },
+      { date: "2022-02-23", isCurrentMonth: true },
+      { date: "2022-02-24", isCurrentMonth: true },
+      { date: "2022-02-25", isCurrentMonth: true },
+      { date: "2022-02-26", isCurrentMonth: true },
+      { date: "2022-02-27", isCurrentMonth: true },
+      { date: "2022-02-28", isCurrentMonth: true },
+      { date: "2022-03-01" },
+      { date: "2022-03-02" },
+      { date: "2022-03-03" },
+      { date: "2022-03-04" },
+      { date: "2022-03-05" },
+      { date: "2022-03-06" },
+      { date: "2022-03-07" },
+      { date: "2022-03-08" },
+      { date: "2022-03-09" },
+      { date: "2022-03-10" },
+      { date: "2022-03-11" },
+      { date: "2022-03-12" },
+      { date: "2022-03-13" },
     ],
   },
-]
+];
+import React from "react";
+import classNames from "classnames";
+import dayjs, { Dayjs } from "dayjs";
+import MonthCalendar from "./MonthCalendar";
 
-function classNames(...classes: string[]) {
-  return classes.filter(Boolean).join(' ')
-}
+const getDaysInMonth = (
+  month: number,
+  year: number
+): {
+  date: Dayjs;
+  day: number;
+  full: string;
+  isCurrentMonth: boolean;
+}[] => {
+  const daysInMonth = dayjs(`${year}-${month + 1}`).daysInMonth();
+  const firstDayOfMonth = dayjs(`${year}-${month + 1}-01`);
+  const lastDayOfMonth = dayjs(`${year}-${month + 1}-${daysInMonth}`);
 
-export default function Example() {
+  const dateArray: {
+    date: Dayjs;
+    day: number;
+    full: string;
+    isCurrentMonth: boolean;
+  }[] = [];
+
+  // Add days from the previous month
+  const daysFromPrevMonth = firstDayOfMonth.day(); // Day of the week (0 = Sunday, 1 = Monday, etc.)
+  for (let i = daysFromPrevMonth - 1; i >= 0; i--) {
+    const date = firstDayOfMonth.subtract(i + 1, "day");
+    dateArray.push({
+      date,
+      day: date.date(),
+      full: date.format("DD-MM-YYYY"),
+      isCurrentMonth: false,
+    });
+  }
+
+  // Add days from the current month
+  for (let day = 1; day <= daysInMonth; day++) {
+    const date = dayjs(`${year}-${month + 1}-${day}`);
+    dateArray.push({
+      date,
+      day: date.date(),
+      full: date.format("DD-MM-YYYY"),
+      isCurrentMonth: true,
+    });
+  }
+
+  // Add days from the next month
+  const daysToAdd = 42 - dateArray.length;
+  for (let i = 1; i <= daysToAdd; i++) {
+    const date = lastDayOfMonth.add(i, "day");
+    dateArray.push({
+      date,
+      day: date.date(),
+      full: date.format("DD-MM-YYYY"),
+      isCurrentMonth: false,
+    });
+  }
+
+  return dateArray;
+};
+
+const Calendar: React.FC = () => {
+  const [currentDate, setCurrentDate] = React.useState(dayjs());
+
+  const currentMonth = React.useMemo(() => {
+    return {
+      name: currentDate.format('MMMM'),
+      days: getDaysInMonth(currentDate.month(), currentDate.year()),
+    };
+  }, [currentDate]);
+
+  const nextMonth = React.useMemo(() => {
+    const nextMonthDate = currentDate.add(1, "month");
+
+    return {
+      name: nextMonthDate.format('MMMM'),
+      days: getDaysInMonth(nextMonthDate.month(), nextMonthDate.year()),
+    };
+  }, [currentDate]);
+
+  console.log(currentMonth, nextMonth);
+
   return (
     <div>
       <div className="relative grid grid-cols-1 gap-x-14 md:grid-cols-2">
@@ -119,7 +197,9 @@ export default function Example() {
           <span className="sr-only">Next month</span>
           <ChevronRightIcon className="size-5" aria-hidden="true" />
         </button>
-        {months.map((month, monthIdx) => (
+        <MonthCalendar name={currentMonth.name} days={currentMonth.days} />
+        <MonthCalendar name={nextMonth.name} days={nextMonth.days} />
+        {/* {months.map((month, monthIdx) => (
           <section
             key={monthIdx}
             className={classNames(monthIdx === months.length - 1 && 'hidden md:block', 'text-center')}
@@ -161,9 +241,9 @@ export default function Example() {
               ))}
             </div>
           </section>
-        ))}
+        ))} */}
       </div>
-      <section className="mt-12">
+      {/* <section className="mt-12">
         <h2 className="text-base font-semibold text-gray-900">Upcoming events</h2>
         <ol className="mt-2 divide-y divide-gray-200 text-sm/6 text-gray-500">
           <li className="py-4 sm:flex">
@@ -198,7 +278,9 @@ export default function Example() {
             </p>
           </li>
         </ol>
-      </section>
+      </section> */}
     </div>
-  )
-}
+  );
+};
+
+export default Calendar;

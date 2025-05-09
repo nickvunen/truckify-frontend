@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-import Calendar from '../components/Calendar';
+import Calendar from "../components/Calendar";
 
 const StringPage: React.FC = () => {
   const [result, setResult] = useState<string>("Loading...");
@@ -16,9 +16,7 @@ const StringPage: React.FC = () => {
       .catch((err) => setError(err.message));
   }, []);
 
-  return (
-    <Calendar />
-  );
+  return <Calendar />;
 };
 
 export default StringPage;
