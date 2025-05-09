@@ -10,7 +10,9 @@ const SideMenu: React.FC = () => (
       <li className="mb-2">
         <Link to="/trucks">Our Trucks</Link>
       </li>
-      {/* Add more menu items as needed */}
+      <li className="mb-2">
+        <Link to="/bookings">Bookings</Link>
+      </li>
     </ul>
   </nav>
 );
