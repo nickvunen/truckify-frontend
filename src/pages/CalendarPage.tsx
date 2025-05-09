@@ -19,7 +19,12 @@ const CalendarPage: React.FC = () => {
   const [endDate, setEndDate] = React.useState<Dayjs | null>(null);
 
   useEffect(() => {
-    if (!startDate || !endDate) return;
+    if (!startDate || !endDate) {
+      setProposedTrucks([]);
+      setAvailableTrucks([]);
+
+      return;
+    };
 
     fetch("http://localhost:8000/availability/trucks_available", {
       method: "POST",
