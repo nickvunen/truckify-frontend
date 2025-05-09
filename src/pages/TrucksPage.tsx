@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from "react";
+import { Truck } from "../utils/types";
 
-interface Truck {
-  id: number;
-  license: string;
-  price: number;
-  image: string;
+type TrucksResponse = {
+  trucks: Truck[];
 }
 
 const TrucksPage: React.FC = () => {
@@ -15,12 +13,12 @@ const TrucksPage: React.FC = () => {
   useEffect(() => {
     const fetchTrucks = async () => {
       try {
-        const response = await fetch("https://localhost:8000/trucks");
+        const response = await fetch("http://localhost:8000/trucks");
         if (!response.ok) {
           throw new Error("Failed to fetch trucks");
         }
         const data = await response.json();
-        setTrucks(data);
+        setTrucks(data.trucks);
       } catch (err: any) {
         setError(err.message);
       } finally {
@@ -41,7 +39,9 @@ const TrucksPage: React.FC = () => {
 
   return (
     <div>
-      <h1>Our Trucks</h1>
+      <h2 className="text-center text-2xl font-bold mb-8">
+        Our trucks
+      </h2>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         {trucks.map((truck) => (
           <div key={truck.id} className="border p-4 rounded shadow">
@@ -51,7 +51,7 @@ const TrucksPage: React.FC = () => {
               className="w-full h-40 object-cover mb-2"
             />
             <h2 className="text-lg font-bold">License: {truck.license}</h2>
-            <p>Price: ${truck.price}</p>
+            <p>Price: €{truck.price_per_day},-</p>
           </div>
         ))}
       </div>

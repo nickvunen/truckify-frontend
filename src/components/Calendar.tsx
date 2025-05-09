@@ -10,7 +10,10 @@ type Props = {
   onSelectEndDate: (endDate: Dayjs | null) => void;
 };
 
-const Calendar: React.FC<Props> = ({ onSelectEndDate, onSelectStartDate }) => {
+const Calendar: React.FC<Props> = ({
+  onSelectEndDate,
+  onSelectStartDate,
+}) => {
   const [currentDate, setCurrentDate] = React.useState(dayjs());
 
   const [selectedStartDate, setSelectedStartDate] =
