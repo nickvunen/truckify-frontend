@@ -1,7 +1,7 @@
 # Node
-frontend/node_modules/
-frontend/build/
-frontend/.env
+node_modules/
+build/
+.env
 
 # Mac and system files
 .DS_Store
