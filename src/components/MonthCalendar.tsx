@@ -1,6 +1,6 @@
 import React from "react";
 import classNames from "classnames";
-import { Dayjs } from "dayjs";
+import dayjs, { Dayjs } from "dayjs";
 
 type Props = {
   name: string;
@@ -12,6 +12,7 @@ type Props = {
   }[];
 };
 
+const TODAY = dayjs().format('DD-MM-YYYY');
 const MonthCalendar: React.FC<Props> = ({ name, days }) => {
   return (
     <section className="text-center">
@@ -43,7 +44,8 @@ const MonthCalendar: React.FC<Props> = ({ name, days }) => {
             <time
               dateTime={day.full}
               className={classNames(
-                "mx-auto flex size-7 items-center justify-center rounded-full"
+                day.full === TODAY && 'bg-indigo-600 font-semibold text-white',
+                'mx-auto flex size-7 items-center justify-center rounded-full',
               )}
             >
               {day.day}
