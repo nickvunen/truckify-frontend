@@ -1,14 +1,7 @@
 import React, { useEffect } from "react";
-import BookingList from "../components/Booking";
 
-type Booking = {
-  id: number;
-  start_date: string;
-  end_date: string;
-  truck_id: number;
-  total_price: number;
-  confirmed: boolean;
-};
+import BookingList from "../components/BookingList";
+import { Booking } from "../utils/types";
 
 type BookingResponse = {
   bookings: Booking[];
@@ -35,6 +28,9 @@ const BookingPage: React.FC = () => {
 
   return (
     <div>
+      <h2 className="text-center text-2xl font-bold mb-8">
+        Current Bookings
+      </h2>
       <BookingList bookings={bookings} />
     </div>
   );

@@ -13,3 +13,12 @@ export type Truck = {
   price_per_day: number;
   id: number;
 };
+
+export type Booking = {
+  id: number;
+  start_date: string;
+  end_date: string;
+  truck_id: number;
+  total_price: number;
+  confirmed: boolean;
+};

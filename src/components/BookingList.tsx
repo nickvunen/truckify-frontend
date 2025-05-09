@@ -12,9 +12,6 @@ const BookingList: React.FC<{
 }> = ({ bookings }) => {
   return (
     <section className="mt-12">
-      <h2 className="text-base font-semibold text-gray-900">
-        Current Bookings
-      </h2>
       <ol className="mt-2 divide-y divide-gray-200 text-sm/6 text-gray-500">
         {bookings.map((booking) => (
           <li className="py-4 sm:flex items-center" key={booking.id}>
