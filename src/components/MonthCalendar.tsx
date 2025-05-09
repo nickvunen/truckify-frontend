@@ -55,13 +55,13 @@ const MonthCalendar: React.FC<Props> = ({
                 "bg-gray-50 text-gray-400 hover:bg-gray-100",
               "relative py-1.5 focus:z-10"
             )}
-            onClick={() => onSelectDate(day.date)}
+            onClick={() => day.isCurrentMonth && onSelectDate(day.date)}
           >
             <time
               dateTime={day.full}
               className={classNames(
                 day.full === TODAY && "text-indigo-600 font-semibold",
-                selectedDays.includes(day.full) && "text-white bg-indigo-600",
+                selectedDays.includes(day.full) && day.isCurrentMonth && "text-white bg-indigo-600",
                 "mx-auto flex size-7 items-center justify-center rounded-full"
               )}
             >
