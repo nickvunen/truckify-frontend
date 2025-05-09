@@ -24,7 +24,7 @@ const BookingPage: React.FC = () => {
       .then((data) => {
         setBookings(data.bookings);
       });
-  }, [bookings]);
+  }, []);
 
   return (
     <div>
