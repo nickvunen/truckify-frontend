@@ -4,6 +4,7 @@ import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/20/solid";
 
 import MonthCalendar from "./MonthCalendar";
 import getCalendarDaysInMonth from "../utils/getCalendayDaysInMonth";
+import useQueryParam from "../utils/useQueryParam";
 
 const Calendar: React.FC = () => {
   const [currentDate, setCurrentDate] = React.useState(dayjs());
@@ -78,6 +79,13 @@ const Calendar: React.FC = () => {
       days: getCalendarDaysInMonth(nextMonthDate.month(), nextMonthDate.year()),
     };
   }, [currentDate]);
+
+  const [, setStartDateParam] = useQueryParam('start_date');
+  const [, setEndDateParam] = useQueryParam('end_date');
+  React.useEffect(() => {
+    setStartDateParam(selectedStartDate ? selectedStartDate.toISOString() : null);
+    setEndDateParam(selectedEndDate ? selectedEndDate.toISOString() : null);
+  }, [selectedStartDate, selectedEndDate]);
 
   return (
     <div>

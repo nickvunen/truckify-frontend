@@ -25,9 +25,8 @@ const CalendarPage: React.FC = () => {
         return res.json() as Promise<TruckAvailabilityResponse>;
       })
       .then((data) => {
-        console.log(data);
-        setTrucks([...data.trucks, ...data.trucks])
-  });
+        setTrucks(data.trucks);
+      });
   }, []);
 
   return (
