@@ -31,7 +31,9 @@ const BookingPage: React.FC = () => {
       <h2 className="text-center text-2xl font-bold mb-8">
         Current Bookings
       </h2>
-      <BookingList bookings={bookings} />
+      <div className="w-3xl mx-auto">
+        <BookingList bookings={bookings} />
+      </div>
     </div>
   );
 };
