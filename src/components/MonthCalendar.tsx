@@ -10,10 +10,18 @@ type Props = {
     full: string;
     isCurrentMonth: boolean;
   }[];
+  selectedRange: {
+    date: Dayjs;
+    day: number;
+    full: string;
+  }[];
+  onSelectDate: (date: Dayjs) => void;
 };
 
-const TODAY = dayjs().format('DD-MM-YYYY');
-const MonthCalendar: React.FC<Props> = ({ name, days }) => {
+const TODAY = dayjs().format("DD-MM-YYYY");
+const MonthCalendar: React.FC<Props> = ({ name, days, selectedRange, onSelectDate }) => {
+  const selectedDays = selectedRange.map((date) => date.full);
+
   return (
     <section className="text-center">
       <h2 className="text-sm font-semibold text-gray-900">{name}</h2>
@@ -36,16 +44,20 @@ const MonthCalendar: React.FC<Props> = ({ name, days }) => {
               dayIdx === 6 && "rounded-tr-lg",
               dayIdx === days.length - 7 && "rounded-bl-lg",
               dayIdx === days.length - 1 && "rounded-br-lg",
-              day.isCurrentMonth && "bg-white hover:bg-gray-50 text-black cursor-pointer",
-              !day.isCurrentMonth && "bg-gray-50 text-gray-400 hover:bg-gray-100",
+              day.isCurrentMonth &&
+                "bg-white hover:bg-gray-50 text-black cursor-pointer",
+              !day.isCurrentMonth &&
+                "bg-gray-50 text-gray-400 hover:bg-gray-100",
               "relative py-1.5 focus:z-10"
             )}
+            onClick={() => onSelectDate(day.date)}
           >
             <time
               dateTime={day.full}
               className={classNames(
-                day.full === TODAY && 'bg-indigo-600 font-semibold text-white',
-                'mx-auto flex size-7 items-center justify-center rounded-full',
+                day.full === TODAY && "text-indigo-600 font-semibold",
+                selectedDays.includes(day.full) && "text-white bg-indigo-600",
+                "mx-auto flex size-7 items-center justify-center rounded-full"
               )}
             >
               {day.day}
