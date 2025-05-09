@@ -1,16 +1,16 @@
 import React from "react";
+
 import Header from "./components/Header";
 import SideMenu from "./components/SideMenu";
 import StringPage from "./pages/StringPage";
-import "./App.css";
 
 const App: React.FC = () => {
   return (
-    <div className="app-container">
+    <div className="min-h-screen flex flex-col">
       <Header />
-      <div className="main-layout">
+      <div className="flex">
         <SideMenu />
-        <div className="page-container">
+        <div className="p-8">
           <StringPage />
         </div>
       </div>

@@ -1,11 +1,19 @@
 import React from "react";
-import "./SideMenu.css";
+
 
 const SideMenu: React.FC = () => (
-  <nav className="side-menu">
-    <ul>
-      <li><a href="#">Home</a></li>
-      <li><a href="#">String Page</a></li>
+  <nav className="w-52 bg-gray-100 p-4 min-h-screen">
+    <ul className="list-none p-0 m-0">
+      <li className="mb-2">
+        <a href="#">
+          Home
+        </a>
+      </li>
+      <li className="mb-2">
+        <a href="#">
+          String Page
+        </a>
+      </li>
       {/* Add more menu items as needed */}
     </ul>
   </nav>
