@@ -5,19 +5,3 @@ body {
   font-family: "Segoe UI", Arial, sans-serif;
   background: #fafcff;
 }
-
-.app-container {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-
-.main-layout {
-  display: flex;
-  flex: 1;
-}
-
-.page-container {
-  flex: 1;
-  padding: 2rem;
-}
