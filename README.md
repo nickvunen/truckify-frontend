@@ -5,7 +5,7 @@
 ```
 docker build -t react-frontend .
 ```
-2. 
+2.
 ```
 docker run -p 3000:3000 react-frontend
 ```
@@ -14,17 +14,17 @@ docker run -p 3000:3000 react-frontend
 
 1. Create a nvm environemnt and use it
 ```
-nvm install 
+nvm install
 
 nvm use
 ```
 
 2. Install dependencies
 ```
-npm install
+yarn install
 ```
 
 3. Start the application
 ```
-npm start
+yarn start
 ```
