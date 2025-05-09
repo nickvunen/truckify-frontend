@@ -24,7 +24,7 @@ const CalendarPage: React.FC = () => {
       setAvailableTrucks([]);
 
       return;
-    };
+    }
 
     fetch("http://localhost:8000/availability/trucks_available", {
       method: "POST",

@@ -1,7 +1,7 @@
 import React from "react";
 import classNames from "classnames";
 import dayjs, { Dayjs } from "dayjs";
-import { Date } from '../utils/types';
+import { Date } from "../utils/types";
 
 type Props = {
   name: string;
@@ -55,7 +55,9 @@ const MonthCalendar: React.FC<Props> = ({
               dateTime={day.full}
               className={classNames(
                 day.full === TODAY && "text-indigo-600 font-semibold",
-                selectedDays.includes(day.full) && day.isCurrentMonth && "text-white bg-indigo-600",
+                selectedDays.includes(day.full) &&
+                  day.isCurrentMonth &&
+                  "text-white bg-indigo-600",
                 "mx-auto flex size-7 items-center justify-center rounded-full"
               )}
             >

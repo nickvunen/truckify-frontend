@@ -28,9 +28,7 @@ const BookingPage: React.FC = () => {
 
   return (
     <div>
-      <h2 className="text-center text-2xl font-bold mb-8">
-        Current Bookings
-      </h2>
+      <h2 className="text-center text-2xl font-bold mb-8">Current Bookings</h2>
       <div className="w-3xl mx-auto">
         <BookingList bookings={bookings} />
       </div>

@@ -22,9 +22,7 @@ const BookingList: React.FC<{
               <p>{booking.start_date}</p>
               <p>{booking.end_date}</p>
             </div>
-            <p className="ml-6 w-48">
-              Total price: €{booking.total_price},-
-            </p>
+            <p className="ml-6 w-48">Total price: €{booking.total_price},-</p>
             <p className="ml-auto text-right">
               {booking.confirmed ? "Confirmed ✅" : "Not confirmed 🚫"}
             </p>
