@@ -4,9 +4,13 @@ import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/20/solid";
 
 import MonthCalendar from "./MonthCalendar";
 import getCalendarDaysInMonth from "../utils/getCalendayDaysInMonth";
-import useQueryParam from "../utils/useQueryParam";
 
-const Calendar: React.FC = () => {
+type Props = {
+  onSelectStartDate: (startDate: Dayjs | null) => void;
+  onSelectEndDate: (endDate: Dayjs | null) => void;
+};
+
+const Calendar: React.FC<Props> = ({ onSelectEndDate, onSelectStartDate }) => {
   const [currentDate, setCurrentDate] = React.useState(dayjs());
 
   const [selectedStartDate, setSelectedStartDate] =
@@ -80,11 +84,9 @@ const Calendar: React.FC = () => {
     };
   }, [currentDate]);
 
-  const [, setStartDateParam] = useQueryParam('start_date');
-  const [, setEndDateParam] = useQueryParam('end_date');
   React.useEffect(() => {
-    setStartDateParam(selectedStartDate ? selectedStartDate.toISOString() : null);
-    setEndDateParam(selectedEndDate ? selectedEndDate.toISOString() : null);
+    onSelectStartDate(selectedStartDate);
+    onSelectEndDate(selectedEndDate);
   }, [selectedStartDate, selectedEndDate]);
 
   return (
