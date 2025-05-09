@@ -16,20 +16,27 @@ const Calendar: React.FC = () => {
 
   const onSelectDate = (date: Dayjs) => {
     if (
-      selectedStartDate &&
-      selectedStartDate.format("DD-MM-YYYY") !== date.format("DD-MM-YYYY")
+      selectedStartDate
     ) {
-      setSelectedEndDate(date);
+      if (selectedStartDate.format("DD-MM-YYYY") === date.format("DD-MM-YYYY")) {
+        setSelectedStartDate(null);
+        setSelectedEndDate(null);
+      } else if (selectedEndDate && selectedEndDate.format("DD-MM-YYYY") === date.format("DD-MM-YYYY")) {
+        setSelectedEndDate(null);
+      } else {
+        setSelectedEndDate(date);
+      }
     } else {
       setSelectedStartDate(date);
     }
   };
 
   const selectedRange = React.useMemo(() => {
-    if (!selectedStartDate || !selectedEndDate) return [];
+    if (!selectedStartDate) return [];
+    const endDate = selectedEndDate || selectedStartDate;
 
     const days: Dayjs[] = [];
-    const diff = selectedEndDate.diff(selectedStartDate, "day");
+    const diff = endDate.diff(selectedStartDate, "day");
 
     for (let i = 0; i <= diff; i++) {
       days.push(selectedStartDate.add(i, "day"));
