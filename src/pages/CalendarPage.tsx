@@ -18,12 +18,13 @@ type TruckAvailabilityResponse = {
 };
 
 const CalendarPage: React.FC = () => {
-  const [trucks, setTrucks] = useState<Truck[]>([]);
+  const [proposedTrucks, setProposedTrucks] = useState<Truck[]>([]);
+  const [availableTrucks, setAvailableTrucks] = useState<Truck[]>([]);
+
   const [startDate, setStartDate] = React.useState<Dayjs | null>(null);
   const [endDate, setEndDate] = React.useState<Dayjs | null>(null);
 
   useEffect(() => {
-    console.log(startDate, endDate);
     if (!startDate || !endDate) return;
 
     fetch("http://localhost:8000/availability/trucks_available", {
@@ -38,7 +39,8 @@ const CalendarPage: React.FC = () => {
         return res.json() as Promise<TruckAvailabilityResponse>;
       })
       .then((data) => {
-        setTrucks(data.available_trucks);
+        setProposedTrucks(data.proposed_trucks);
+        setAvailableTrucks(data.available_trucks);
       });
   }, [startDate, endDate]);
 
@@ -49,7 +51,12 @@ const CalendarPage: React.FC = () => {
         onSelectEndDate={(date) => setEndDate(date)}
       />
       <div className="w-3xl mx-auto">
-        <TruckList trucks={trucks} />
+        {availableTrucks.length > 0 && (
+          <TruckList title="Available trucks" trucks={availableTrucks} />
+        )}
+        {proposedTrucks.length > 0 && (
+          <TruckList title="Proposed trucks" trucks={proposedTrucks} />
+        )}
       </div>
     </div>
   );

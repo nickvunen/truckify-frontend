@@ -7,13 +7,12 @@ type Truck = {
 };
 
 const TruckList: React.FC<{
+  title: string;
   trucks: Truck[];
-}> = ({ trucks }) => {
+}> = ({ trucks, title }) => {
   return (
     <section className="mt-12">
-      <h2 className="text-base font-semibold text-gray-900">
-        Available trucks
-      </h2>
+      <h2 className="text-base font-semibold text-gray-900">{title}</h2>
       <ol className="mt-2 divide-y divide-gray-200 text-sm/6 text-gray-500">
         {trucks.map((truck) => (
           <li className="py-4 sm:flex items-center" key={truck.id}>
